@@ -1,0 +1,13 @@
+[package]
+name = "christoph/timely"
+version = "0.2.1"
+description = "Timely - Time Tracker"
+
+[[module]]
+name = "timely_server"
+source = "./timely-server.wasm"
+abi = "wasi"
+
+[[command]]
+name = "wcgi"
+module = "timely_server"
