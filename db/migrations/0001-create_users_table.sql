@@ -1,0 +1,11 @@
+-- Users table
+
+CREATE TABLE users(
+  id BIGSERIAL NOT NULL PRIMARY KEY,
+  username TEXT NOT NULL UNIQUE,
+  email TEXT NOT NULL UNIQUE,
+  password_hash TEXT NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
+  CONSTRAINT username_length CHECK (LENGTH(username) BETWEEN 3 AND 20),
+  CONSTRAINT email_length CHECK (LENGTH(username) BETWEEN 3 AND 200)
+);
